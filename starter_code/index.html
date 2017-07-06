@@ -95,9 +95,11 @@
 
 	<script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
 	<script type="text/javascript">
+			// $("input").prop("required" ,true); adds required to inputs need to figure out checkbox tho
 
 		var main = $('#main');
 		function makeResults() {
+
 
 			$( "<section class='container results'><h1>A True Story:</h1>" ).appendTo(main);
 
@@ -106,30 +108,56 @@
 			// results.innerHTML = '<h1>' + 'A true story:' + '</h1>';
 			// results.className = 'container results';
 			// main.appendChild(results);
-		};
+			}
 
 		$("form").on("submit", function(event){
 
 		    // Stop the form from submitting
+		    event.preventDefault();
 
+		     
+    		
 	    	// Run the 'makeResults' function seen above
+	   
+	   		makeResults();
 
-	    	/*
+	    
+	    	make vars for the result.val then put those into the 
 			
-				For each value entered into a form input, add the input to the corresponding sentence, then append the text into the results section:
+				// For each value entered into a form input, add the input to the corresponding sentence, then append the text into the results section:
+				
+				// "Once upon a time there was a Developer named NAME."
+				 $("#main").append("<p>Once upon a time there was a Developer named " + $("#name").val() + "</p>");
 
-				"Once upon a time there was a Developer named NAME."
+		
+				// "NAME came to General Asssembly to VERB1 the great mountain of programming knowledge."
 
-				"NAME came to General Asssembly to VERB1 the great mountain of programming knowledge."
+				$("#main").append( "<p>" + $("#name").val() + " came to General Asssembly to " + $("#verb-1").val() + " the great mountain of programming knowledge.</P>" );
 
-				""MISSION", NAME shouted."
+				// ""MISSION", NAME shouted."
+
+				$("#main").append( "<p>" + $("#mission").val() + " , " + $("#name").val() + " shouted." + "</p>");
 	
-				"Though SENTIMENT, NAME was able to overcome all obstacles with the power of their NOUN."
+				// "Though SENTIMENT, NAME was able to overcome all obstacles with the power of their NOUN."
 
-				"In the end, their success can be contributed entirely to their " + ADJECTIVE2[list each one checked, comma-separated] + NOUN2."
+				$("#main").append("<p>" + "Though " + $("#sentiment").val() + ", " + $("#name").val() + " was able to overcome all obstacles with the power of their " + $("#noun").val() + "." );
 
-	    	*/ 
-		});
+				// "In the end, their success can be contributed entirely to their " + ADJECTIVE2[list each one checked, comma-separated] + NOUN2."
+				
+				 
+					if ($("input:checkbox").is(":checked") && 
+						$("input:radio").is(":checked")) 
+						return  $("#main").append("In th end, their success can be contributed entirely to their " + $("#adjective-2").val() + $("#noun-2").val() + ".");
+					else {
+						alert("check at least one!");
+					}
+
+});
+
+		
+	$('input[name=adjective-2]:checked')
+            .map(function () {return (this).value();}).get().join(",");
+
 	</script>
 
 </body>
