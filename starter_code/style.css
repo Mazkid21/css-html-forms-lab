@@ -4,14 +4,141 @@
 	/* ^^^ Forces all elements to include content, padding, and border as part of their width/height calculation: 
 	http://www.w3schools.com/cssref/css3_pr_box-sizing.asp */
 }
+	
+body {
+	font-family: 'Proza Libre', sans-serif;
+	font-size: 14px;
+}
 
-/* 
-	Use Google Fonts to make all of the text Proza Libre.
+	/*Use Google Fonts to make all of the text Proza Libre.*/
 
-	Make the Title twice as large as the body text, bold, and give it some nice margin.
-*/
+ h1 {
+	font-size: 200%;/*Make the Title twice as large as the body text, bold, and give it some nice margin.*/
+}
+
+label {
+	display: inline-block;
+	margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+ input {
+    border: 0px;
+    width: 100%;
+    height: 2em;
+}
+
+div.row.formGroup {
+	display: grid;
+	margin: 10px 0;
+
+  
+}
+
+
 
 /*-------- Main Styles --------*/
+#main {
+	height: 100%;
+	width: 100%;
+	
+}
+
+.form {
+	
+	float: left;
+	border-radius: 10px;
+	width: 440px;
+    margin-left: 30px;
+    border-radius: 3px;
+	background-color: #E3E6EC;
+	padding: 0 20px;
+}
+
+
+ 
+
+label.radioButton {
+	margin: 20px 0;
+}
+	
+
+#name {
+	width: 402px;
+	border-radius: 3px;
+	height: 32px;
+}
+
+#verb-1 {
+	width: 402px;
+	border-radius: 3px;
+	height: 32px;
+}
+
+#mission {
+	width: 402px;
+	border-radius: 3px;
+	height: 75px;
+	margin-bottom: 5px;
+}
+
+#radio1 {
+	height: 10px;
+    width: 10px;
+
+}
+
+label #radio2 {
+	display: inline-block;
+}
+
+#radio2 {
+	height: 10px;
+	width: 10px;
+}
+
+#radio3 {
+	height: 10px;
+    width: 10px;
+    margin-bottom: 25px;
+}
+
+#radio4 {
+	height: 10px;
+    width: 10px;
+}
+
+#noun-1 {
+	width: 402px;
+	border-radius: 3px;
+	height: 32px;
+}
+
+#noun-2 {
+	width: 402px;
+	border-radius: 3px;
+	height: 32px;
+}
+
+#check1 {
+	height: 10px;
+	width: 20px;
+}
+
+#check2 {
+	height: 10px;
+	width: 20px;
+}
+
+#check3 {
+	height: 10px;
+	width: 20px;
+}
+
+#check4 {
+	height: 10px;
+	width: 20px;
+}
 
 /* 
 	Make the main container the full width of the page.
@@ -55,10 +182,50 @@
 	
 */
 
+input[type=submit] {
+	width: 80px;
+	height: 40px;
+    right: auto;
+    left: 320px;
+    position: relative;
+    font-weight: 700;
+    font-size: 14px;
+    background-color: rgba(39, 208, 127, .5);
+    border-radius: 5px;
+    margin-top: 25px;
+}
+
+
+input[type=submit]:hover {
+   background-color: rgba(39, 208, 127, 1.0);
+  font-weight: 900;
+  letter-spacing: 5px;
+  height: 55px;
+  width: 100px;
+  
+ 
+}
 
 /*-------- Results Styles --------*/
 
+.results {
+	float: right;
+	width: 450px;
+	position: fixed;
+	right: 8px;
+	border-radius: 8px;
+	position: fixed;
+    left: 500px;
+    top: 9px;
+    background-color: #C8DBB3;
+    height: 220px;
 
+
+}
+
+.container.results  {
+	    margin: 10px, 0, 10px, 10px;
+}
 /* 
 
 	The results container should also fill the width of its container, but only up to 500px.

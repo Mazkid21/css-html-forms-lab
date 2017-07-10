@@ -3,6 +3,7 @@
 <head>
 	<title>CSS HTML Forms Lab</title>
 	<link rel="stylesheet" href="style.css">
+	<link href="https://fonts.googleapis.com/css?family=Proza+Libre" rel="stylesheet">
 </head>
 <body>
 	<section id="main">
@@ -121,42 +122,48 @@
 	   
 	   		makeResults();
 
+	   		var sent = $('input[name=sentiment]:checked').val();
+
+	   		var add = $('input[name=adjective-2]:checked').val();
+            
+
+	   		// var radio = $("radioButton" )results.val(); 
 	    
-	    	make vars for the result.val then put those into the 
+	    	// make vars for the result.val then put those into the 
 			
 				// For each value entered into a form input, add the input to the corresponding sentence, then append the text into the results section:
 				
 				// "Once upon a time there was a Developer named NAME."
-				 $("#main").append("<p>Once upon a time there was a Developer named " + $("#name").val() + "</p>");
+				 $(".results").append("<p>Once upon a time there was a Developer named " + $("#name").val() + ". ");
 
 		
 				// "NAME came to General Asssembly to VERB1 the great mountain of programming knowledge."
 
-				$("#main").append( "<p>" + $("#name").val() + " came to General Asssembly to " + $("#verb-1").val() + " the great mountain of programming knowledge.</P>" );
+				$(".results p").append($("#name").val() + " came to General Asssembly to " + $("#verb-1").val() + " the great mountain of programming knowledge. " );
 
 				// ""MISSION", NAME shouted."
 
-				$("#main").append( "<p>" + $("#mission").val() + " , " + $("#name").val() + " shouted." + "</p>");
+				$(".results p").append($("#mission").val() + " , " + $("#name").val() + " shouted. " );
 	
 				// "Though SENTIMENT, NAME was able to overcome all obstacles with the power of their NOUN."
 
-				$("#main").append("<p>" + "Though " + $("#sentiment").val() + ", " + $("#name").val() + " was able to overcome all obstacles with the power of their " + $("#noun").val() + "." );
+				$(".results p").append("Though " + sent + ", " + $("#name").val() + " was able to overcome all obstacles with the power of their "  + $("input[name=noun-1]").val() + ". " );
 
 				// "In the end, their success can be contributed entirely to their " + ADJECTIVE2[list each one checked, comma-separated] + NOUN2."
 				
+				$(".results p").append("In the end, their sucess can be contributed entirely to their " + add + " " + $("input[name=noun-2]").val() + "</p>");
 				 
-					if ($("input:checkbox").is(":checked") && 
-						$("input:radio").is(":checked")) 
-						return  $("#main").append("In th end, their success can be contributed entirely to their " + $("#adjective-2").val() + $("#noun-2").val() + ".");
-					else {
-						alert("check at least one!");
-					}
+					// COMMENT- "DONT THINK I NEED BUT MIGHT WORK WHEN I FIGURE OUT HOW TO MAKE THE RADIO BOXES APPEAR if ($("input").is(":checked") && 
+					// 	$("input:radio").is(":checked")) 
+					// 	return  $("#main").append("In th end, their success can be contributed entirely to their " + $("#adjective-2").val() + $("#noun-2").val() + ".");
+					// else {
+					// 	alert("check at least one!");
+					// }
 
 });
 
 		
-	$('input[name=adjective-2]:checked')
-            .map(function () {return (this).value();}).get().join(",");
+	
 
 	</script>
 
